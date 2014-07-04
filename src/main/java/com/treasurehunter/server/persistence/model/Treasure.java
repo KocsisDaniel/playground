@@ -1,4 +1,4 @@
-package com.treasurehunter.server;
+package com.treasurehunter.server.persistence.model;
 
 /**
  * Created by FrosTi on 03/07/14.

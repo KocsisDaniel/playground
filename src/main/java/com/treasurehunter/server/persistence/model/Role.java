@@ -1,4 +1,4 @@
-package com.treasurehunter.server;
+package com.treasurehunter.server.persistence.model;
 
 public class Role {
 

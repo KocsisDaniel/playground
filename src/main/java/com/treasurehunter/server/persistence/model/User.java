@@ -1,4 +1,4 @@
-package com.treasurehunter.server;
+package com.treasurehunter.server.persistence.model;
 
 import java.util.ArrayList;
 import java.util.List;
