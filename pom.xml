@@ -215,7 +215,7 @@
 				<configuration>
 					<api>JDO</api>
 					<mappingIncludes>**/model/*.class</mappingIncludes>
-					<log4jConfiguration>${basedir}/log4j.properties</log4jConfiguration>
+					<log4jConfiguration>${basedir}\src\main\webapp\WEB-INF\log4j.properties</log4jConfiguration>
 					<fork>false</fork>
 					<verbose>true</verbose>
 				</configuration>
