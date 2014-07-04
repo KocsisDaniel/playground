@@ -1,45 +1,60 @@
 package com.treasurehunter.server.persistence.model;
 
-/**
- * Created by FrosTi on 03/07/14.
- */
 public class Treasure {
 
-	public TreasureCategory getCategory() {
-		return _category;
+	public long getCategoryId() {
+		return _categoryId;
 	}
 
 	public String getDescription() {
 		return _description;
 	}
 
+	public long getImageId() {
+		return _imageId;
+	}
+
+	public long getLocationId() {
+		return _locationId;
+	}
+
 	public String getName() {
 		return _name;
 	}
 
-	public Location getLocation() {
-		return _location;
+	public String getUserId() {
+		return _userId;
 	}
 
-	public void setCategory(TreasureCategory category) {
-		this._category = _category;
+	public void setCategoryId(long categoryId) {
+		_categoryId = categoryId;
 	}
 
 	public void setDescription(String description) {
-		this._description = _description;
+		_description = description;
+	}
+
+	public void setImageId(long imageId) {
+		_imageId = imageId;
+	}
+
+	public void setLocationId(long locationId) {
+		_locationId = locationId;
 	}
 
 	public void setName(String name) {
 		_name = name;
 	}
 
-	public void setLocation(Location location) {
-		this._location = _location;
+	public void setUserId(String userId) {
+		_userId = userId;
 	}
 
-	private String _name = "";
+	private long _categoryId = 0;
 	private String _description = "";
-	private TreasureCategory _category = null;
-	private Location _location;
+	private long _imageId = 0;
+	private long _locationId = 0;
+	private String _name = "";
+	private String _userId = "";
 
 }

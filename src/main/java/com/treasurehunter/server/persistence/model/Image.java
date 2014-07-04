@@ -12,24 +12,33 @@ public class Image {
 		return _image;
 	}
 
+	public long getImageId() {
+		return _imageId;
+	}
+
 	public String getName() {
 		return _name;
 	}
 
-	public void set_description(String description) {
+	public void setDescription(String description) {
 		this._description = description;
 	}
 
-	public void set_image(BufferedImage image) {
+	public void setImage(BufferedImage image) {
 		this._image = image;
 	}
 
-	public void set_name(String name) {
+	public void setImageId(long imageId) {
+		_imageId = imageId;
+	}
+
+	public void setName(String name) {
 		this._name = name;
 	}
 
-	private String _name = "";
 	private String _description = "";
 	private java.awt.image.BufferedImage _image = null;
+	private long _imageId = 0;
+	private String _name = "";
 
 }
