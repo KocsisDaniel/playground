@@ -1,10 +1,10 @@
 package com.treasurehunter.server.persistence.model;
 
-public class TreasureCategory {
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
-	public long getCategoryId(){
-		return _categoryId;
-	}
+@PersistenceCapable
+public class TreasureCategory {
 
 	public String getDescription() {
 		return _description;
@@ -12,10 +12,6 @@ public class TreasureCategory {
 
 	public String getName() {
 		return _name;
-	}
-
-	public void setCategoryId(long categoryId) {
-		_categoryId = categoryId;
 	}
 
 	public void setDescription(String description) {
@@ -26,8 +22,9 @@ public class TreasureCategory {
 		_name = name;
 	}
 
-	private long _categoryId = 0;
-	private String _description = "";
-	private String _name = "";
+	@Persistent
+	private String _description;
+	@Persistent
+	private String _name;
 
 }

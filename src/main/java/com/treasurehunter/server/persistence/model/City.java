@@ -1,14 +1,20 @@
 package com.treasurehunter.server.persistence.model;
 
-public class City {
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+
+@PersistenceCapable
+public class City extends DataStoreModel {
 
 	public String getName() {
 		return _name;
 	}
 
 	public void setName(String name) {
-		this._name = name;
+		_name = name;
 	}
 
-	private String _name = "";
+	@Persistent
+	private String _name;
+
 }

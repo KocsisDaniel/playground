@@ -1,19 +1,13 @@
 package com.treasurehunter.server.persistence.model;
 
-import java.awt.image.BufferedImage;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
-public class Image {
+@PersistenceCapable
+public class Image extends DataStoreModel {
 
 	public String getDescription() {
 		return _description;
-	}
-
-	public java.awt.image.BufferedImage getImage() {
-		return _image;
-	}
-
-	public long getImageId() {
-		return _imageId;
 	}
 
 	public String getName() {
@@ -24,21 +18,13 @@ public class Image {
 		this._description = description;
 	}
 
-	public void setImage(BufferedImage image) {
-		this._image = image;
-	}
-
-	public void setImageId(long imageId) {
-		_imageId = imageId;
-	}
-
 	public void setName(String name) {
-		this._name = name;
+		_name = name;
 	}
 
-	private String _description = "";
-	private java.awt.image.BufferedImage _image = null;
-	private long _imageId = 0;
-	private String _name = "";
+	@Persistent
+	private String _description;
+	@Persistent
+	private String _name;
 
 }

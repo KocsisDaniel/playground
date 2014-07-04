@@ -1,6 +1,10 @@
 package com.treasurehunter.server.persistence.model;
 
-public class Location {
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+
+@PersistenceCapable
+public class Location extends DataStoreModel {
 
 	public double getAltitude() {
 		return _altitude;
@@ -16,10 +20,6 @@ public class Location {
 
 	public double getLatitude() {
 		return _latitude;
-	}
-
-	public long getLocationId() {
-		return _locationId;
 	}
 
 	public double getLongitude() {
@@ -42,19 +42,19 @@ public class Location {
 		_latitude = latitude;
 	}
 
-	public void setLocationId(long locationId) {
-		_locationId = locationId;
-	}
-
 	public void setLongitude(double longitude) {
 		_longitude = longitude;
 	}
 
-	private double _altitude = 0;
-	private String _description = "";
-	private double _latitude = 0;
-	private long _locationId = 0;
-	private double _longitude = 0;
-	private String _name = "";
+	@Persistent
+	private double _altitude;
+	@Persistent
+	private String _description;
+	@Persistent
+	private double _latitude;
+	@Persistent
+	private double _longitude;
+	@Persistent
+	private String _name;
 
 }

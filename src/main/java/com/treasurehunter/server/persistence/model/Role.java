@@ -1,6 +1,10 @@
 package com.treasurehunter.server.persistence.model;
 
-public class Role {
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+
+@PersistenceCapable
+public class Role extends DataStoreModel {
 
 	public String getName() {
 		return _name;
@@ -18,7 +22,9 @@ public class Role {
 		_role = role;
 	}
 
-	private String _name = "";
-	private String _role = "";
+	@Persistent
+	private String _name;
+	@Persistent
+	private String _role;
 
 }

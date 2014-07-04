@@ -1,40 +1,30 @@
 package com.treasurehunter.server.persistence.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
+@PersistenceCapable
 public class User {
 
-	public void addTreasure(Treasure treasure) {
-		_treasures.add(treasure);
+	public String getEmailAddress() {
+		return _emailAddress;
 	}
 
-	public void removeTreasure(Treasure treasure) {
-		_treasures.remove(treasure);
+	public String getName() {
+		return _name;
 	}
 
-	public City getCity() {
-		return _city;
+	public void setEmailAddress(String emailAddress) {
+		_emailAddress = emailAddress;
 	}
 
-	public Role getRole() {
-		return _role;
+	public void setName(String name) {
+		_name = name;
 	}
 
-	public List<Treasure> getTreasures() {
-		return _treasures;
-	}
-
-	public void setCity(City _city) {
-		this._city = _city;
-	}
-
-	public void setRole(Role role) {
-		_role = role;
-	}
-
-	private Role _role = null;
-	private java.util.List<Treasure> _treasures = new ArrayList<>();
-	private City _city = null;
+	@Persistent
+	private String _name;
+	@Persistent
+	private String _emailAddress;
 
 }
