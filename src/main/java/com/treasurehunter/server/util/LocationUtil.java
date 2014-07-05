@@ -2,12 +2,30 @@ package com.treasurehunter.server.util;
 
 public class LocationUtil {
 
+	/**
+	 * Returns distance in miles based on two points given by Latitude and
+	 * Longitude
+	 * @param lat1 Start latitude
+	 * @param long1 Start longitude
+	 * @param lat2 Destination latitude
+	 * @param long2 Destination longitude
+	 * @return Distance in miles as int
+	 */
 	public static int getDistanceInMiles(
 		double lat1, double long1, double lat2, double long2) {
 
 		return (int)(1000D * getDistanceInKilometers(lat1, long1, lat2, long2));
 	}
 
+	/**
+	 * Returns distance in kilometers based on two points given by Latitude and
+	 * Longitude
+	 * @param lat1 Start latitude
+	 * @param long1 Start longitude
+	 * @param lat2 Destination latitude
+	 * @param long2 Destination longitude
+	 * @return Distance in kilometers as double
+	 */
 	public static double getDistanceInKilometers(
 		double lat1, double long1, double lat2, double long2) {
 
