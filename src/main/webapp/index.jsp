@@ -1,11 +1,6 @@
 <%@ page import="com.treasurehunter.server.persistence.model.City" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Dani
-  Date: 7/4/2014
-  Time: 6:03 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.treasurehunter.server.persistence.dao.CityDAO" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,10 +11,7 @@
 	<H1>Test Page</H1>
 
 	<%
-		City city = new City();
-
-		city.setName("Budapest");
-		city = (City)city.save();
+		City city = CityDao.getInstance().addCity("Budapest");
 	%>
 
 	<strong>City <%= city.getName() %> has been persisted!</strong>

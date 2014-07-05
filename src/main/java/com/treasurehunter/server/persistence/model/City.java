@@ -3,7 +3,7 @@ package com.treasurehunter.server.persistence.model;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
-@PersistenceCapable
+@PersistenceCapable(detachable="true")
 public class City extends DataStoreModel {
 
 	public String getName() {

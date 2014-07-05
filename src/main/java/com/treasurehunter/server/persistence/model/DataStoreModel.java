@@ -18,43 +18,6 @@ public class DataStoreModel {
 		return key;
 	}
 
-	public static DataStoreModel getObjectByKey(Key key) {
-		PersistenceManagerFactory pmf =
-			PersistenceManagerFactoryUtil.getPersistenceManagerFactory();
-
-		PersistenceManager persistenceManager = pmf.getPersistenceManager();
-
-		return persistenceManager.getObjectById(DataStoreModel.class, key);
-	}
-
-	public void delete() {
-		PersistenceManagerFactory pmf =
-			PersistenceManagerFactoryUtil.getPersistenceManagerFactory();
-
-		PersistenceManager persistenceManager = pmf.getPersistenceManager();
-
-		try {
-			persistenceManager.deletePersistent(this);
-		}
-		finally {
-			persistenceManager.close();
-		}
-	}
-
-	public DataStoreModel add() {
-		PersistenceManagerFactory pmf =
-			PersistenceManagerFactoryUtil.getPersistenceManagerFactory();
-
-		PersistenceManager persistenceManager = pmf.getPersistenceManager();
-
-		try {
-			return persistenceManager.makePersistent(this);
-		}
-		finally {
-			persistenceManager.close();
-		}
-	}
-
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Key key;
