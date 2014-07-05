@@ -18,6 +18,10 @@ public class Treasure extends DataStoreModel {
 		return _name;
 	}
 
+	public int getWeight() {
+		return _weight;
+	}
+
 	public void setDescription(String description) {
 		_description = description;
 	}
@@ -30,11 +34,17 @@ public class Treasure extends DataStoreModel {
 		_name = name;
 	}
 
+	public void setWeight(int weight) {
+		_weight = weight;
+	}
+
 	@Persistent
 	private String _description;
 	@Persistent(dependent = "true")
 	private Location _location;
 	@Persistent
 	private String _name;
+	@Persistent
+	private int _weight;
 
 }
