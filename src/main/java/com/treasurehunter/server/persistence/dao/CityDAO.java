@@ -14,6 +14,14 @@ public class CityDAO extends BaseDAO<City> {
 		return _instance;
 	}
 
+	public City addCity(String name) {
+		City city = new City();
+
+		city.setName(name);
+
+		return create(city);
+	}
+
 	@Override
 	public List<City> findAll() {
 		return findAll(City.class);
@@ -34,14 +42,6 @@ public class CityDAO extends BaseDAO<City> {
 		city.setName(name);
 
 		return update(city);
-	}
-
-	public City addCity(String name) {
-		City city = new City();
-
-		city.setName(name);
-
-		return create(city);
 	}
 
 	private CityDAO() {};
