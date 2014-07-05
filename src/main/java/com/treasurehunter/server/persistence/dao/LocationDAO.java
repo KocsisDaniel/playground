@@ -2,6 +2,7 @@ package com.treasurehunter.server.persistence.dao;
 
 import com.google.appengine.api.datastore.Key;
 import com.treasurehunter.server.persistence.model.Location;
+import com.treasurehunter.server.util.LocationUtil;
 
 import java.util.List;
 
@@ -30,6 +31,10 @@ public class LocationDAO extends BaseDAO<Location> {
 	public Location addLocation(
 		String name, String description, double latitude, double longitude,
 		double altitude) {
+
+		if (!isValid(name, latitude, longitude)) {
+			return null;
+		}
 
 		Location location = new Location();
 
@@ -89,6 +94,28 @@ public class LocationDAO extends BaseDAO<Location> {
 
 		return update(location);
 	}
+
+	private boolean isValid(
+		String name, double latitude, double longitude) {
+
+		for (Location location : findAll()) {
+			if (name.equals(location.getName())) {
+				return false;
+			}
+
+			double distance = LocationUtil.getDistanceInKilometers(
+				latitude, longitude, location.getLatitude(),
+				location.getLongitude());
+
+			if (distance < _minDistance) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	private double _minDistance = 0.01;
 
 	private LocationDAO() {};
 
