@@ -23,8 +23,8 @@ public class User {
 	}
 
 	@Persistent
-	private String _name;
-	@Persistent
 	private String _emailAddress;
+	@Persistent
+	private String _name;
 
 }

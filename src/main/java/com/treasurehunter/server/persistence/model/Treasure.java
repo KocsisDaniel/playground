@@ -4,7 +4,7 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
 @PersistenceCapable(detachable="true")
-public class Treasure {
+public class Treasure extends DataStoreModel {
 
 	public String getDescription() {
 		return _description;
@@ -30,10 +30,10 @@ public class Treasure {
 		_name = name;
 	}
 
-	@Persistent(dependent = "true")
-	private Location _location;
 	@Persistent
 	private String _description;
+	@Persistent(dependent = "true")
+	private Location _location;
 	@Persistent
 	private String _name;
 
