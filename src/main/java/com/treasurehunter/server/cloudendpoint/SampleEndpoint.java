@@ -6,6 +6,8 @@ import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.treasurehunter.server.persistence.dao.CityDAO;
 import com.treasurehunter.server.persistence.model.City;
+import com.treasurehunter.server.persistence.model.Treasure;
+import com.treasurehunter.server.util.TreasureUtil;
 
 /**
  * @author Daniel Kocsis
@@ -22,4 +24,14 @@ public class SampleEndpoint {
 		return CityDAO.getInstance().addCity(name);
 	}
 
+	@ApiMethod(name = "addTreasure")
+	public Treasure addTreasure(
+		String locationName, String locationDescription, double latitude,
+	    double longitude, double altitude, String treasureName,
+	    String treasureDescription, int treasureWeight) {
+
+		return TreasureUtil.createTreasure(locationName, locationDescription,
+			latitude, longitude, altitude, treasureName, treasureDescription,
+			treasureWeight);
+	}
 }

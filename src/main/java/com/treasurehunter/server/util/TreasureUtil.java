@@ -8,9 +8,9 @@ import com.treasurehunter.server.persistence.model.Treasure;
 
 public class TreasureUtil {
 
-	public static void createTreasure(
-		String userId, String locationName, String locationDescription,
-		double latitude, double longitude, double altitude, String treasureName,
+	public static Treasure createTreasure(
+		String locationName, String locationDescription, double latitude,
+		double longitude, double altitude, String treasureName,
 		String treasureDescription, int treasureWeight) {
 
 		//Create a new location
@@ -18,12 +18,14 @@ public class TreasureUtil {
 			locationName, locationDescription, latitude, longitude, altitude);
 
 		if (location == null) {
-			return;
+			return null;
 		}
 
 		//Create a new treasure
 		Treasure treasure = TreasureDAO.getInstance().addTreasure(
 			treasureName, treasureDescription, location, treasureWeight);
+
+		return treasure;
 	}
 
 }
