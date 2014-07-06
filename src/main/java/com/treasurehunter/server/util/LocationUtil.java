@@ -62,4 +62,5 @@ public class LocationUtil {
 	private static final double _eQuatorialEarthRadius = 6378.1370D;
 	private static final double _d2r = (Math.PI / 180D);
 	private static final double _oneMileInKilometers = 0.621371192;
+
 }

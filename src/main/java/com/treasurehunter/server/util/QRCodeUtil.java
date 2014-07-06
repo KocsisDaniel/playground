@@ -57,4 +57,5 @@ public class QRCodeUtil {
 	}
 
 	private static Logger _logger = Logger.getLogger(QRCodeUtil.class);
+
 }

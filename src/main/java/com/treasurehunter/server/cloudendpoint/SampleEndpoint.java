@@ -27,11 +27,12 @@ public class SampleEndpoint {
 	@ApiMethod(name = "addTreasure")
 	public Treasure addTreasure(
 		String locationName, String locationDescription, double latitude,
-	    double longitude, double altitude, String treasureName,
-	    String treasureDescription, int treasureWeight) {
+		double longitude, double altitude, String treasureName,
+		String treasureDescription, int treasureWeight) {
 
 		return TreasureUtil.createTreasure(locationName, locationDescription,
 			latitude, longitude, altitude, treasureName, treasureDescription,
 			treasureWeight);
 	}
+
 }

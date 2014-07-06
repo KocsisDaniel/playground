@@ -89,4 +89,5 @@ public class TreasureDAO extends BaseDAO<Treasure> {
 	private TreasureDAO() {};
 
 	private static TreasureDAO _instance = new TreasureDAO();
+
 }
