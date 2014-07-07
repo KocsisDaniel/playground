@@ -11,7 +11,7 @@
 	<H1>Test Page</H1>
 
 	<%
-		City city = CityDao.getInstance().addCity("Budapest");
+		City city = CityDAO.getInstance().addCity("Budapest");
 	%>
 
 	<strong>City <%= city.getName() %> has been persisted!</strong>

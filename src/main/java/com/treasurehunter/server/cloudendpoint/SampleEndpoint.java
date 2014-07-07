@@ -12,11 +12,7 @@ import com.treasurehunter.server.util.TreasureUtil;
 /**
  * @author Daniel Kocsis
  */
-@Api(name = "myApi",
-	version = "v1",
-	namespace = @ApiNamespace(ownerDomain = "treasurehunter.com",
-	ownerName = "treasurehunter.com",
-	packagePath=""))
+@Api(name = "myApi", version = "v1")
 public class SampleEndpoint {
 
 	@ApiMethod(name = "addCity")
@@ -26,9 +22,12 @@ public class SampleEndpoint {
 
 	@ApiMethod(name = "addTreasure")
 	public Treasure addTreasure(
-		String locationName, String locationDescription, double latitude,
-		double longitude, double altitude, String treasureName,
-		String treasureDescription, int treasureWeight) {
+		@Named("location") String locationName,
+		@Named("location_description") String locationDescription,
+		double latitude, double longitude, double altitude,
+		@Named("treasure_name") String treasureName,
+		@Named("treasure_description") String treasureDescription,
+		int treasureWeight) {
 
 		return TreasureUtil.createTreasure(locationName, locationDescription,
 			latitude, longitude, altitude, treasureName, treasureDescription,
