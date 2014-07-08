@@ -2,7 +2,6 @@ package com.treasurehunter.server.cloudendpoint;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
-import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.treasurehunter.server.persistence.dao.CityDAO;
 import com.treasurehunter.server.persistence.model.City;

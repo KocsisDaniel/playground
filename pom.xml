@@ -96,6 +96,14 @@
 			<version>2.1.2</version>
 		</dependency>
 
+		<!-- Push Notification API Dependencies -->
+
+		<dependency>
+			<groupId>com.notnoop.apns</groupId>
+			<artifactId>apns</artifactId>
+			<version>0.2.3</version>
+		</dependency>
+
 		<!-- Test Dependencies -->
 
 		<dependency>
